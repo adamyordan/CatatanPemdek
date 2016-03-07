@@ -1,0 +1,18 @@
+[n .. m] = [n, n+1, .., m]; if n > m, = []
+
+[n,p, .. m] = [n, p, n + 2 (p - n), .. , m]
+	e.g:	[7,6, .. 3] = [7,6,5,4,3]
+		[0.0, 0.3 .. 1.0] = [0.0, 0.3, 0.9]
+
+
+-- LIST COMPREHENSION
+ex = [2, 4, 7]
+[ 2*n | n <- ex] = [4,8,14]
+n <- ex DISEBUT generator
+
+isEven = (n `mod` 2 == 0)
+[isEven n | n <- ex] = [True, True, False]
+
+[2*n | n <- ex, isEven n, n > 3]
+isEven n, n > 3 DISEBUT test
+

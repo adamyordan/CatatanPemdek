@@ -1,0 +1,22 @@
+Tuples = ordered collection of n values, n > 1
+
+(10, True) :: (Int, Bool)
+((10, True), 4.0) :: ((Int, Bool), Double)
+
+
+List
+-- Pastikan tipenya sama
+[1, 2, 3, 4] :: [t]
+[(10, True) , (11, False)] :: [(Int, Bool)]
+
+
+String
+-- list of char
+"abc" <--> ['a', 'b', 'c']
+String <--> [Char]
+
+
+TYPE SYNONIMS
+type Umur = Int
+type Nama = String
+("budi", 25) :: (Nama, Int)
