@@ -30,3 +30,15 @@ addNum n = addN
 -- addNum dalam notasi lambda
 addNum' :: Int -> (Int -> Int)
 addNum' = (\n -> (\m -> n + m))
+
+-- plumbing
+comp2 :: (a -> b) -> (b -> b -> c) -> (a -> a -> c)
+comp2 f g = (\x y -> g (f x) (f y))
+
+
+-- partial application
+multiply :: Int -> Int -> Int
+multiply x y = x * y
+
+doubleAll :: [Int] -> [Int]
+doubleAll = map (multiply 2)

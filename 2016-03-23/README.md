@@ -16,6 +16,7 @@ function composition ~> f . x
 function application ~> f x
 
 
+
 Reversing Composition
 =====================
 define operator '>.>'
@@ -25,6 +26,7 @@ infixl 9 >.>
 (>.>) :: (a -> b) -> (b -> c) -> (a -> c)
 g >.> f = f . g
 ```
+
 
 
 Expression defining function
@@ -38,6 +40,8 @@ addNum n = addN
 	where
 		addN m = n + m
 ```
+
+
 
 Anonymous Function
 ==================
@@ -54,3 +58,24 @@ sqr =  (\x -> x*x)
 ~> 9
 
 //trivia: pakai notasi '\' karena mirip lambda :v
+
+
+
+Partial Application
+===================
+add :: Int -> Int -> Int
+add x y = x + y
+
+add 3 2 ~> 5
+add 3   ~> fungsi baru (add 3) n
+
+ff = add 3
+:t ff   ~> Int -> Int
+ff 2    ~> 5
+
+partial, yg argumennya dikosongin cuma boleh yang sebelah kanan
+kalau mau kiri, jawabannya FUNGSI :v
+```
+add' x y = add y x
+ff = add* 7
+```
