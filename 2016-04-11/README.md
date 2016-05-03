@@ -1,5 +1,7 @@
 # Type Class
 
+Kumpulan kelas yang memiliki sifat yang sama. Sifat-sifat tersebut di manifestasikan kedalam bentuk signature fungsi. 
+
 2,3,4,7 <~ Int
 'a','b','c' <~ Char
 35.0, 37.0 <~ Float
