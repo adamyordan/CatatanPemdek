@@ -24,14 +24,14 @@ sgetLine = do c <- getCh
                   return (c : cs)
 
 diff :: String -> String -> String
-diff [] ys = []
-diff (x:xs) ys
-  | isExist x ys = x : diff xs ys
-  | otherwise    = '-' : diff xs ys
+diff [] test = []
+diff (x:xs) test
+  | x `existIn` test = x : diff xs test
+  | otherwise        = '-' : diff xs test
 
-isExist :: Char -> String -> Bool
-isExist x [] = False
-isExist x (y:ys)
+existIn :: Char -> String -> Bool
+existIn x [] = False
+existIn x (y:ys)
   | x == y    = True
   | otherwise = isExist x ys
 
