@@ -33,7 +33,7 @@ existIn :: Char -> String -> Bool
 existIn x [] = False
 existIn x (y:ys)
   | x == y    = True
-  | otherwise = isExist x ys
+  | otherwise = x `existIn` ys
 
 guess :: String -> IO ()
 guess word = do input <- getLine                
