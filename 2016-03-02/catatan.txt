@@ -7,7 +7,7 @@ a = f . g
 
 -- POLYMORPHISM
 
-polymorphic funcion = "has many types"
+polymorphic function = "has many types"
 
 length :: [a]->Int
 NOTE: a DISEBUT type variable
